@@ -91,50 +91,75 @@
     position: absolute;
     z-index: var(--i, 1);
     overflow: hidden;
-    transition: all 0.5s ease-in-out;
+    top: 0px;
+    left: 0px;
+    width: inherit;
+    height: inherit;
     img {
-      width: inherit;
-      height: inherit;
       object-fit: cover;
+      position: absolute;
+      transition: all 0.5s ease-in-out;
+      transition-delay: calc(0.02s * var(--i, 1));
     }
     .text {
       position: absolute;
       color: #ffffff;
       opacity: 0;
-      transition: opacity 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      text-shadow: 1px 1px 2px black;
     }
     .name {
       font-size: 80px;
-      bottom: 460px;
-      left: 100px;
       font-family: 'Rajdhani', 'Noto Sans JP', sans-serif;
+      font-weight: bold;
     }
     .desc {
       font-size: 20px;
-      bottom: 250px;
-      left: 100px;
       width: 520px;
       line-height: 2rem;
     }
     &.open {
-      top: 0px;
-      left: 0px;
-      width: inherit;
-      height: inherit;
+      img {
+        top: 0px;
+        left: 0px;
+        width: inherit;
+        height: inherit;
+      }
       .text {
         opacity: 1;
+        transition-delay: 0.5s;
+      }
+      .name {
+        bottom: 460px;
+        left: 100px;
+      }
+      .desc {
+        bottom: 250px;
+        left: 100px;
       }
     }
     &.close {
-      --width: 130px;
-      width: var(--width);
-      height: calc(var(--width) * 1.5);
-      top: calc(100vh - var(--width) * 1.5 - 200px);
-      left: calc(55vw + (var(--width) + 20px) * var(--offset));
-      border-radius: 8px;
-      box-shadow: 4px 4px 6px 3px #00000099;
+      img {
+        --width: 130px;
+        width: var(--width);
+        height: calc(var(--width) * 1.5);
+        top: calc(100vh - var(--width) * 1.5 - 200px);
+        left: calc(55vw + (var(--width) + 20px) * var(--offset));
+        border-radius: 8px;
+        box-shadow: 4px 4px 6px 3px #00000099;
+      }
       .text {
         opacity: 0;
+        transition-delay: 0s;
+        transition-duration: 0s;
+      }
+      .name {
+        bottom: 480px;
+        left: 100px;
+      }
+      .desc {
+        bottom: 230px;
+        left: 100px;
       }
     }
   }
