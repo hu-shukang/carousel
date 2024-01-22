@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('../fonts/Rajdhani/Rajdhani-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('../fonts/Rajdhani/Rajdhani-Light.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('../fonts/Rajdhani/Rajdhani-Medium.ttf') format('truetype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('../fonts/Rajdhani/Rajdhani-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('../fonts/Rajdhani/Rajdhani-SemiBold.ttf') format('truetype');
+  font-weight: 600; /* SemiBold */
+  font-style: normal;
+}
+
+.carousel-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  .controls {
+    position: absolute;
+    z-index: 100;
+    bottom: 40px;
+    left: 50%;
+    width: 300px;
+    height: 100px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    button {
+      --size: 60px;
+      color: #ffffff;
+      background-color: transparent;
+      width: var(--size);
+      height: var(--size);
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: box-shadow 0.2s linear;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+      &:hover {
+        box-shadow: 0px 0px 10px 2px #ffffff99;
+      }
+    }
+  }
+  .process-line {
+    z-index: 100;
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    width: 100vw;
+    height: 4px;
+    background-color: #ffffff;
+    .process {
+      height: inherit;
+      width: calc(100% * var(--percent));
+      background-color: orangered;
+      left: 0;
+      top: 0;
+      position: absolute;
+      transition: width 0.5s ease-in-out;
+    }
+  }
+  .carousel-item {
+    position: absolute;
+    z-index: var(--i, 1);
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+    .text {
+      position: absolute;
+      color: #ffffff;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .name {
+      font-size: 80px;
+      bottom: 460px;
+      left: 100px;
+      font-family: 'Rajdhani', 'Noto Sans JP', sans-serif;
+    }
+    .desc {
+      font-size: 20px;
+      bottom: 250px;
+      left: 100px;
+      width: 520px;
+      line-height: 2rem;
+    }
+    &.open {
+      top: 0px;
+      left: 0px;
+      width: inherit;
+      height: inherit;
+      .text {
+        opacity: 1;
+      }
+    }
+    &.close {
+      --width: 130px;
+      width: var(--width);
+      height: calc(var(--width) * 1.5);
+      top: calc(100vh - var(--width) * 1.5 - 200px);
+      left: calc(55vw + (var(--width) + 20px) * var(--offset));
+      border-radius: 8px;
+      box-shadow: 4px 4px 6px 3px #00000099;
+      .text {
+        opacity: 0;
+      }
+    }
+  }
+}
