@@ -25,7 +25,12 @@
   }
 
   .item {
-    @extend %absolute;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: var(--size);
+    height: var(--size);
     opacity: 0;
     transition: opacity 1s ease-in-out;
     &.open {
@@ -37,10 +42,11 @@
       }
     }
     .part {
-      @extend %absolute;
-      @extend %center;
-      width: 100vmax;
-      height: 100vmax;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
       box-sizing: border-box;
       filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
       img {
@@ -50,11 +56,11 @@
         transition-delay: var(--transition-delay, 0s);
       }
       &.inner {
-        --clip-path: circle(20% at 50% 50%);
+        --clip-path: circle(200px at 50% 50%);
         --transition-delay: 0s;
       }
       &.middle {
-        --clip-path: circle(40% at 50% 50%);
+        --clip-path: circle(400px at 50% 50%);
         --transition-delay: 0.1s;
       }
       &.outter {
