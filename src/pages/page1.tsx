@@ -33,7 +33,7 @@ const Page1 = () => {
   }, []);
 
   return (
-    <>
+    <div className="page1">
       <div className="carousel-wrapper">
         {carouselList.map((item, index) => (
           <div
@@ -58,7 +58,7 @@ const Page1 = () => {
           <div className="process"></div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

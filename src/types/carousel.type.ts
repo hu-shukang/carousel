@@ -1,11 +1,11 @@
-export type CarouselItem = {
+export type CarouselItemModel = {
   id: string;
   image: string;
   name: string;
   desc: string;
 };
 
-export const carouselList: CarouselItem[] = [
+export const carouselList: CarouselItemModel[] = [
   {
     id: '1',
     image: '/images/01.jpg',

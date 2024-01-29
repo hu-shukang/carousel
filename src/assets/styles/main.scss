@@ -33,133 +33,135 @@
   font-style: normal;
 }
 
-.carousel-wrapper {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  .controls {
-    position: absolute;
-    z-index: 100;
-    bottom: 40px;
-    left: 50%;
-    width: 300px;
-    height: 100px;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    button {
-      --size: 60px;
-      color: #ffffff;
-      background-color: transparent;
-      width: var(--size);
-      height: var(--size);
-      border: 1px solid #ffffff;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: box-shadow 0.2s linear;
-      img {
-        width: 20px;
-        height: 20px;
-      }
-      &:hover {
-        box-shadow: 0px 0px 10px 2px #ffffff99;
-      }
-    }
-  }
-  .process-line {
-    z-index: 100;
-    position: absolute;
-    bottom: 10px;
-    left: 0px;
+.page1 {
+  .carousel-wrapper {
     width: 100vw;
-    height: 4px;
-    background-color: #ffffff;
-    .process {
-      height: inherit;
-      width: calc(100% * var(--percent));
-      background-color: orangered;
-      left: 0;
-      top: 0;
-      position: absolute;
-      transition: width 0.5s ease-in-out;
-    }
-  }
-  .carousel-item {
-    position: absolute;
-    z-index: var(--i, 1);
+    height: 100vh;
+    position: relative;
     overflow: hidden;
-    top: 0px;
-    left: 0px;
-    width: inherit;
-    height: inherit;
-    img {
-      object-fit: cover;
+    .controls {
       position: absolute;
-      transition: all 0.5s ease-in-out;
-      transition-delay: calc(0.02s * var(--i, 1));
+      z-index: 100;
+      bottom: 40px;
+      left: 50%;
+      width: 300px;
+      height: 100px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      button {
+        --size: 60px;
+        color: #ffffff;
+        background-color: transparent;
+        width: var(--size);
+        height: var(--size);
+        border: 1px solid #ffffff;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: box-shadow 0.2s linear;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+        &:hover {
+          box-shadow: 0px 0px 10px 2px #ffffff99;
+        }
+      }
     }
-    .text {
+    .process-line {
+      z-index: 100;
       position: absolute;
-      color: #ffffff;
-      opacity: 0;
-      transition: all 0.5s ease-in-out;
-      text-shadow: 1px 1px 2px black;
-    }
-    .name {
-      font-size: 80px;
-      font-family: 'Rajdhani', 'Noto Sans JP', sans-serif;
-      font-weight: bold;
-    }
-    .desc {
-      font-size: 20px;
-      width: 520px;
-      line-height: 2rem;
-    }
-    &.open {
-      img {
-        top: 0px;
-        left: 0px;
-        width: inherit;
+      bottom: 10px;
+      left: 0px;
+      width: 100vw;
+      height: 4px;
+      background-color: #ffffff;
+      .process {
         height: inherit;
-      }
-      .text {
-        opacity: 1;
-        transition-delay: 0.5s;
-      }
-      .name {
-        bottom: 460px;
-        left: 100px;
-      }
-      .desc {
-        bottom: 250px;
-        left: 100px;
+        width: calc(100% * var(--percent));
+        background-color: orangered;
+        left: 0;
+        top: 0;
+        position: absolute;
+        transition: width 0.5s ease-in-out;
       }
     }
-    &.close {
+    .carousel-item {
+      position: absolute;
+      z-index: var(--i, 1);
+      overflow: hidden;
+      top: 0px;
+      left: 0px;
+      width: inherit;
+      height: inherit;
       img {
-        --width: 130px;
-        width: var(--width);
-        height: calc(var(--width) * 1.5);
-        top: calc(100vh - var(--width) * 1.5 - 200px);
-        left: calc(55vw + (var(--width) + 20px) * var(--offset));
-        border-radius: 8px;
-        box-shadow: 4px 4px 6px 3px #00000099;
+        object-fit: cover;
+        position: absolute;
+        transition: all 0.5s ease-in-out;
+        transition-delay: calc(0.02s * var(--i, 1));
       }
       .text {
+        position: absolute;
+        color: #ffffff;
         opacity: 0;
-        transition-delay: 0s;
-        transition-duration: 0s;
+        transition: all 0.5s ease-in-out;
+        text-shadow: 1px 1px 2px black;
       }
       .name {
-        bottom: 480px;
-        left: 100px;
+        font-size: 80px;
+        font-family: 'Rajdhani', 'Noto Sans JP', sans-serif;
+        font-weight: bold;
       }
       .desc {
-        bottom: 230px;
-        left: 100px;
+        font-size: 20px;
+        width: 520px;
+        line-height: 2rem;
+      }
+      &.open {
+        img {
+          top: 0px;
+          left: 0px;
+          width: inherit;
+          height: inherit;
+        }
+        .text {
+          opacity: 1;
+          transition-delay: 0.5s;
+        }
+        .name {
+          bottom: 460px;
+          left: 100px;
+        }
+        .desc {
+          bottom: 250px;
+          left: 100px;
+        }
+      }
+      &.close {
+        img {
+          --width: 130px;
+          width: var(--width);
+          height: calc(var(--width) * 1.5);
+          top: calc(100vh - var(--width) * 1.5 - 200px);
+          left: calc(55vw + (var(--width) + 20px) * var(--offset));
+          border-radius: 8px;
+          box-shadow: 4px 4px 6px 3px #00000099;
+        }
+        .text {
+          opacity: 0;
+          transition-delay: 0s;
+          transition-duration: 0s;
+        }
+        .name {
+          bottom: 480px;
+          left: 100px;
+        }
+        .desc {
+          bottom: 230px;
+          left: 100px;
+        }
       }
     }
   }
