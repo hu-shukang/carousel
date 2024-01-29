@@ -13,6 +13,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.3",
     "sass": "^1.70.0"
   },
   "devDependencies": {
@@ -29,6 +30,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "prettier": "3.2.4",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vite-tsconfig-paths": "^4.3.1"
   }
 }
